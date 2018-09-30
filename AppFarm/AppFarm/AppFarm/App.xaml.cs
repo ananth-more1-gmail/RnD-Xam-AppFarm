@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppFarm.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,13 +8,16 @@ namespace AppFarm
 {
     public partial class App : Application
     {
+        #region Constructor
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new LoginPage());
         }
+        #endregion
 
+        #region Methods
         protected override void OnStart()
         {
             // Handle when your app starts
@@ -27,6 +31,7 @@ namespace AppFarm
         protected override void OnResume()
         {
             // Handle when your app resumes
-        }
+        } 
+        #endregion
     }
 }
